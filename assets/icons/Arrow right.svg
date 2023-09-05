@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16.207" height="13.887" viewBox="0 0 16.207 13.887">
+  <g id="Arrow_right" data-name="Arrow right" transform="translate(0.5 0.707)">
+    <g id="Group_10" data-name="Group 10" transform="translate(8.764)">
+      <line id="Line_1" data-name="Line 1" x2="6.236" y2="6.236" fill="none" stroke="#60886c" stroke-linecap="round" stroke-width="1"/>
+      <line id="Line_2" data-name="Line 2" y1="6.236" x2="6.236" transform="translate(0 6.236)" fill="none" stroke="#60886c" stroke-linecap="round" stroke-width="1"/>
+    </g>
+    <line id="Line_3" data-name="Line 3" x2="15" transform="translate(0 6.236)" fill="none" stroke="#60886c" stroke-linecap="round" stroke-width="1"/>
+  </g>
+</svg>
