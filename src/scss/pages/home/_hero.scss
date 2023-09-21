@@ -1,0 +1,81 @@
+@use '../../components/buttons' as button;
+@use '../../utilities/responsive';
+
+.hero {
+    min-height: 100vh;
+    background: url(assets/images/HBackground@2x.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: grid;
+    grid-template-columns: var(--grid-container);
+    background-color: var(--color-light-300);
+
+    &__inner {
+        grid-column: inner;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        @include responsive.max(600px) {
+            padding-top: var(--gap-m);
+        }
+    }
+   
+
+    &__content {
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;     
+    }
+
+    &__title {
+        font-size: clamp(2.5rem, 1.2838rem + 4.3243vw, 5.5rem);
+        color: var(--color-light-200);
+        font-weight: 300;
+        margin: 0;
+        line-height: 1.1;
+        max-width: 42rem;
+    }
+
+    &__text {
+        color: var(--color-light-300);
+        font-weight: 300;
+        max-width: 38rem;
+        margin: var(--gap-s) 0 var(--gap-s) 0;
+
+        p {
+            margin: 0;
+        }
+    }
+
+    &__buttons {
+        display: flex;
+        justify-content: center;
+        gap: var(--gap-m);
+        margin-top: var(--gap-s);
+
+        .button__green {
+            @include button.default;
+
+            @include responsive.max(600px) {
+                order: 2;
+            }
+        }
+
+        .button__border {
+            @include button.default($background: transparent, $border-color: var(--color-light-200), $hover-background: var(--color-light-100), $hover-border-color: var(--color-light-200));
+               
+        }
+
+        @include responsive.max(600px) {
+            margin-top: 0.5rem;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--gap-s);
+        }
+    }
+}
