@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="13.473" viewBox="0 0 16 13.473">
+  <g id="ArrowRight" transform="translate(-369 -2216.264)">
+    <g id="Group_10" data-name="Group 10" transform="translate(-3.236 4.764)">
+      <path id="Line_1" data-name="Line 1" d="M6.236,6.736a.5.5,0,0,1-.354-.146L-.354.354a.5.5,0,0,1,0-.707.5.5,0,0,1,.707,0L6.59,5.883a.5.5,0,0,1-.354.854Z" transform="translate(381.5 2212)" fill="#60886c"/>
+      <path id="Line_2" data-name="Line 2" d="M0,6.736A.5.5,0,0,1-.354,6.59a.5.5,0,0,1,0-.707L5.883-.354a.5.5,0,0,1,.707,0,.5.5,0,0,1,0,.707L.354,6.59A.5.5,0,0,1,0,6.736Z" transform="translate(381.5 2218.236)" fill="#60886c"/>
+    </g>
+    <path id="Line_3" data-name="Line 3" d="M15,.5H0A.5.5,0,0,1-.5,0,.5.5,0,0,1,0-.5H15a.5.5,0,0,1,.5.5A.5.5,0,0,1,15,.5Z" transform="translate(369.5 2223)" fill="#60886c"/>
+  </g>
+</svg>
