@@ -1,22 +1,30 @@
+@use '../utilities/responsive';
+
 @mixin default(
     $background: var(--color-dark), 
-    $color: var(--color-light-100), 
-    $hover-background: var(--color-dark-400),
-    $hover-color: var(--color-light-100),
-    $border-color: var(--color-dark)) 
+    $color: var(--color-light-200), 
+    $border-color: var(--color-dark),
+    $hover-background: var(--color-dark-dark),
+    $hover-color: var(--color-light-200),
+    $hover-border-color: var(--color-dark-dark)
+    ) 
     {
     background-color: $background;
     color: $color;
     padding: 1rem 2rem;
     border: solid $border-color;
-    border-radius: 100%;
-    font-size: 1rem;
-    font-weight: 700;
+    border-radius: 45px;
+    font-size: var(--font-size-1);
+    font-weight: 400;
     display: inline-block;
     text-decoration: none;
     &:hover {
         background-color: $hover-background;
         color: $hover-color;
-        border: solid var(--color-dark-400);
+        border: solid $hover-border-color;
+    }
+
+    @include responsive.max(600px) {
+        font-size: 14px;
     }
 }
