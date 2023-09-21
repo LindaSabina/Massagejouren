@@ -1,0 +1,25 @@
+@use '../utilities/responsive';
+
+.map {
+    background-image: url(/assets/images/Map@2x.jpg);
+    background-size: cover;
+    background-position: center;
+    
+    &__content {
+        height: 22rem;
+        position: relative;
+    }
+
+    &__text {
+        position: absolute;
+        top: 25px;
+        left: 45%;
+        color: var(--color-dark-400);
+
+        @include responsive.max(600px) {
+            left: 30%;
+            top: 40px;
+        }
+
+    }
+}
