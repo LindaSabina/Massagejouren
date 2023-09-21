@@ -1,0 +1,82 @@
+@use '../utilities/responsive';
+
+.contact {
+    display: grid;
+    grid-template-columns: var(--grid-container);
+    background-color: var(--color-light-200);
+    background-image: url(/assets/images/Mask\ Group\ 5.svg);
+    background-repeat: no-repeat;
+    background-position: right bottom;
+
+    &__inner {
+        grid-column: inner;
+        margin: var(--section-gap) 0;
+
+        @include responsive.max(600px) {
+            margin: var(--gap-xl) 0;
+        }
+    }
+
+    &__title {
+        margin: 0 0 var(--gap-s) 0;
+
+    }
+
+    &__content {
+        grid-template-columns: 50% 50%;
+        display: grid;
+        color: var(--color-dark-300);
+
+        @include responsive.max(900px) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__contact {
+        margin: 1.5rem var(--gap-xxl) ;
+
+        &-content {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            @include responsive.max(1050px) {
+                justify-content: center;
+                gap: var(--gap-s);
+            }
+        }
+
+        @include responsive.max(1050px) {
+            margin: 1.5rem 0 1.5rem var(--gap-l);
+        }
+
+        @include responsive.max(900px) {
+            margin: var(--gap-s) 0 0 0;
+        }
+    }
+
+    &__link {
+        display: flex;
+        align-items: center;
+        gap: var(--gap-s);
+        font-weight: 700;
+        color: var(--color-dark);
+    }
+
+    &__icon {
+        svg {
+            width: 1.8rem;
+        }
+    }
+
+    &__katarina {
+        p {
+            font-family: var(--font-serif);
+            font-style: italic;
+            margin-bottom: 0;
+            line-height: var(--line-height-s);
+        }
+
+    }
+}
