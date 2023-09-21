@@ -1,0 +1,47 @@
+@use '../components/buttons' as button;
+@use '../utilities/responsive';
+
+.promo {
+    background-image: url(/assets/images/ImagePromo@2x.jpg);
+    background-size: cover;
+    background-position: center;
+
+    @include responsive.max(800px) {
+        background-image: url(/assets/images/HotStoneSmall@2x.jpg);
+    }
+
+    &__content {
+        padding: var(--section-gap) var(--gap-l);
+
+        @include responsive.max(600px) {
+            padding: var(--gap-xl) var(--gap-m);
+        }
+    }
+
+    &__title {
+        color: var(--color-light-200);
+        text-align: center;
+        margin: 0 0 2.5rem 0;
+        
+    }
+
+    &__buttons {
+        display: flex;
+        gap: var(--gap-m);
+        justify-content: center;
+
+        @include responsive.max(600px) {
+            flex-direction: column;
+            align-items: center;
+            gap: var(--gap-s);
+        }
+    }
+
+    &__button {
+        @include button.default;
+
+        &--border {
+            @include button.default($background: transparent, $border-color: var(--color-light-200), $hover-background: var(--color-light-100), $hover-border-color: var(--color-light-200));
+        }
+    }
+}
