@@ -1,0 +1,135 @@
+@use '../utilities/responsive';
+
+.recenssioner {
+
+    background-color: var(--color-light-200);
+    display: grid;
+    grid-template-columns: var(--grid-container);
+    
+    &__inner {
+        grid-column: inner;
+        text-align: center;  
+        padding: var(--section-gap) 0;
+        background-image: url(/assets/images/Group\ 144.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 48rem;
+
+        @include responsive.max(700px) {
+            background-image: none;
+        }
+
+        @include responsive.max(650px) {
+            padding: var(--gap-l) 0;
+        }
+    }
+
+    &__title {
+        margin: 0;
+        margin-top: var(--gap-m);
+
+        @include responsive.max(600px) {
+            margin-top: var(--gap-s);
+            margin-bottom: -1rem;
+        }
+    }
+}
+
+.recenssion {
+    max-width: 31rem;
+    margin-bottom: var(--gap-s);
+
+    &__text {
+        font-style: italic;
+        line-height: var(--line-height-s);
+        font-size: var(--font-size-3);
+        font-family: var(--font-serif);
+        font-weight: 500;
+        margin: 0;
+        padding-top: var(--gap-xl);
+
+        @include responsive.max(900px) {
+            padding-top: var(--gap-l);
+        }
+        @include responsive.max(700px) {
+            font-size: var(--font-size-2);
+            font-weight: 400;
+            padding-top: var(--gap-xl);
+        }
+
+        
+    }
+
+    &__name {
+        color: var(--color-dark-300);
+        text-align: end;
+        font-size: var(--font-size-1);
+        margin: var(--gap-s) var(--gap-s) var(--gap-l) 0;
+
+        @include responsive.max(900px) {
+            font-size: var(--font-size);
+            margin: var(--gap-s) var(--gap-s) var(--gap-m) 0;
+        }
+
+        @include responsive.max(700px) {
+            text-align: center;
+            margin: var(--gap-s) 0 var(--gap-m) 0;
+            font-size: 14px;
+        }
+
+    }
+}
+
+
+
+.swiper {
+    width: 100%;
+    margin-bottom: var(--gap-l);
+    
+    @include responsive.max(700px) {
+        background-image: url(/assets/images/Group\ 144.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+    }
+
+    &-slide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    @include responsive.max(600px) {
+        margin-bottom: var(--gap-s);
+    }
+
+    &-pagination {
+        @include responsive.max(600px) {
+            
+        }
+    }
+    
+}
+
+.swiper-button-prev, .swiper-button-next {
+    color: var(--color-dark);
+    padding-left: var(--gap-xl);
+    padding-right: var(--gap-xl);
+
+    @include responsive.max(900px) {
+        padding: 0;
+    }
+
+    @include responsive.max(700px) {
+        display: none;
+    }
+}
+
+.swiper-button-next:after, .swiper-button-prev:after {
+    font-size: var(--font-size-2)
+}
+
+.swiper-pagination-bullet {
+    background-color: var(--color-dark-400);
+}
+
