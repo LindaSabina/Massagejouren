@@ -1,0 +1,153 @@
+@use '../utilities/responsive';
+
+.site-header {
+    position: fixed;
+    z-index: 999;
+    height: 120px;
+    width: 100%;
+    left: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 var(--gap-xl);
+    transition: all 0.5s ease;
+
+    @include responsive.max(600px) {
+        padding: 0 var(--gap-m);
+    }
+
+    &--scroll {
+        background-color: var(--color-dark);
+        height: 100px;
+
+        .site-header__branding svg{
+           width: 6rem;
+        }
+
+        @include responsive.max(600px) {
+            .site-header__branding svg {
+                width: 4.5rem;
+            }
+        }
+ 
+    }
+
+    &__branding {
+        line-height: 0;
+        padding-top: 0.5rem;
+
+        @include responsive.max(600px) {
+            
+            svg {
+                width: 4.5rem;
+            }
+        }
+
+        &:hover {
+            path {
+            
+                fill: var(--color-light-400);
+            }
+                
+        }
+    }
+
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__list {
+        list-style: none;
+        display: flex;
+        gap: var(--gap-m);
+
+        @include responsive.max(1000px) {
+            display: none;
+        }
+
+    }
+
+    &__link {
+        color: var(--color-light-200);
+        font-size: var(--font-size-2);
+        font-weight: 300;
+
+        &--bold {
+            font-weight: 700;
+        }
+
+        &:hover {
+            color: var(--color-light-400);
+        }
+    }
+
+    &__button {
+        margin: 0;
+        padding: 0;
+        height: 16px;
+        width: 1.5rem;
+        display: none;
+        align-items: center;
+        border: 0;
+        background-color: inherit;
+        cursor: pointer;
+
+        @include responsive.max(1000px) {
+            display: flex;
+        }
+
+        &--close {
+
+            .hamburger {
+
+                transition: transform 0.2s 0.2s;
+                transform: rotate(45deg);
+        
+                &:before {
+                    transition: top 0.2s, transform 0.2s 0.2s;
+                    transform: rotate(90deg);
+                    top: 0;
+                }
+        
+                &:after {
+                    transition: bottom 0.2s width 0.2s;
+                    width: 0;
+                    bottom: 0;
+                }
+            }
+        }
+    }
+}
+
+.hamburger {
+    height: 2px;
+    width: 100%;   
+    position: relative;
+    padding: 0;
+    background-color: var(--color-light);
+    transition: transform 0.2s;
+    
+    &:before, &:after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: var(--color-light);
+        position: absolute;
+    }
+
+    &:before {
+        top: 8px;
+        transition: top 0.2s 0.2s, transform 0.2s;
+    }
+
+    &:after {
+        bottom: 8px;
+        transition: bottom 0.2s 0.2s, transform 0.2s;
+    }
+
+}
