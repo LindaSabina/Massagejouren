@@ -1,0 +1,126 @@
+@use '../utilities/responsive';
+
+.treatments {
+    background-color: var(--color-light-200);
+    display: grid;
+    grid-template-columns: var(--grid-container);
+
+    &__inner {
+        grid-column: inner;
+        text-align: center;
+        padding: var(--section-gap) 0;
+
+        @include responsive.max(600px) {
+            padding: var(--gap-xl) 0 var(--gap-xl);
+        }
+    }
+
+    &__title {
+        font-weight: 300;
+        padding: 0 10rem;
+        margin: var(--gap-m) 0 var(--gap-l);
+
+        @include responsive.max(1100px) {
+            padding: 0;
+        }
+
+        @include responsive.max(600px) {
+            margin: 0 0 var(--gap-m);
+        }
+    }
+
+    &__text {
+        color: var(--color-dark-200);
+        padding: 0 12rem;
+        margin-bottom: var(--gap-m);
+
+        @include responsive.max(1100px) {
+            padding: 0;
+        }
+    }
+
+    &__link {
+        font-size: var(--font-size-3);
+        color: var(--color-dark-300);
+        padding-bottom: var(--gap-m);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: var(--gap-s);  
+
+        @include responsive.max(600px) {
+            font-size: var(--font-size-2);
+            padding-bottom: var(--gap-s);
+        }
+
+        svg {
+            transform: translateX(0);
+        }
+
+        &:hover svg{
+            transform: translateX(0.5rem);
+            transition: transform 0.3s;
+        }
+    }
+}
+
+.gallery {
+    margin-top: var(--gap-l);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: var(--gap-s);
+
+    @include responsive.max(950px) {
+        grid-template-columns: 1fr;
+    }
+
+    &__item {
+        grid-column: auto;
+        display: flex;
+        flex-direction: column;
+        gap: var(--gap-s);
+
+        &:hover {
+            .gallery__image img {
+                 filter: grayscale(0%);
+            }
+
+            .gallery__link svg {
+                transform: translateX(0.5rem);
+                transition: transform 0.3s;
+            }
+         }
+    }
+
+    &__image {
+        width: 100%;
+        height: 100%;
+
+        img {
+            filter: grayscale(100%);
+            transition: filter 0.5s;
+        }
+
+        @include responsive.max(950px) {
+            // order: 2;
+            // margin-bottom: var(--gap-m);
+        }
+    }
+
+    &__link {
+        color: var(--color-dark-300);
+        font-size: var(--font-size-2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: var(--gap-s);
+
+        svg {
+            transform: translateX(0);
+        }
+
+        @include responsive.max(950px) {
+            margin-bottom: var(--gap-m);
+        }
+    }
+}
